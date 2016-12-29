@@ -1,3 +1,4 @@
 check if commit appears in JIRA VIJ-10
 changing file on the branch new_branch
 changed on branch VIJ-10
+changed made on branch VIJ-10
