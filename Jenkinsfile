@@ -5,9 +5,13 @@ pipeline {
            steps {
               echo 'Building...'
               bat 'mvn clean package'
-              emailext body: 'test body', recipientProviders: [developers()], subject: 'test', to: 'vdhajare@gmail.com' 
+           }
+            post{
+                success{
+                    echo 'Now Archiving...'
+                    archiveArtifacts artifacts: '**/target/*.war'
+                }
             }
-            
-          }
+        }
     }
 }
